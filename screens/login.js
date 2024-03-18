@@ -37,7 +37,7 @@ const Login = () => {
             onChangeText={setPassword}
             value={password}
         />
-        <Button title="Iniciar sesión" onPress={handleLogin} />
+        <Button style={styles.boton} title="Iniciar sesión" /*onPress={handleLogin}*/ />
     </View>
   );
 };
@@ -58,16 +58,19 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     margin: 10,
-    width: 200,
+    width: '95%',
   },
   labels: {
     fontSize: 20
   },
   logo: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
-    marginBottom: 20,
+    width: '100%',
+    height: '45%',
+    resizeMode: 'cover'
+    //marginBottom: 20,
+  },
+  boton: {
+    width: 50
   }
 });
 

@@ -4,6 +4,8 @@ import React from 'react';
 
 //Screens
 import Login from './screens/login';
+import Perfil from './screens/perfil';
+
 
 const Main = () => {
   // ...
@@ -12,6 +14,7 @@ const Main = () => {
 export default function App() {
   return(
     <Login />
+    //<Perfil />
   );
 };
 
