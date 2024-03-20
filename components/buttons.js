@@ -14,7 +14,7 @@ export function Button_login() {
                     ...styles.buttonText,
                     color: '#f1f1f1'
                 }}
-            >Iniciar Sesion</Text>
+            >Log in</Text>
         </TouchableOpacity>
             
     )
@@ -27,10 +27,11 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         borderRadius: 20,
         paddingVertical: 15,
-        width: '95%',
+        width: '90%',
         margin: 20
     },
     buttonText: {
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: 20
     }
 })
