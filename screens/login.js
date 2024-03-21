@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TouchableOpacity, StyleSheet, Text, TextInput, Button, View, Image } from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import { Button_login } from '../components/buttons';
 
 
@@ -10,7 +11,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-  const [isPressed, setIsPressed] = useState(false)
+  const [isPressed, setIsPressed] = useState(false);
 
   const handleLogin = () => {
     // TODO: Implementar la lógica de autenticación
@@ -32,25 +33,42 @@ const Login = () => {
   return (
     <View style={styles.container}>
 
-      <Image source={require('D:/Semestre 9/Software 3/Gym_App/assets/img/logo_login.png')} style={styles.logo}></Image>
-      <Text style={styles.title}> Sign In</Text>
-      <Text style={styles.labels}>   Username</Text>
-      <TextInput
-          style={styles.input}
-          placeholder="name@example.com"
-          onChangeText={setUsername}
-          value={username}
-      />
-      <Text style={styles.labels}>   Password</Text>
-      <TextInput
-          style={styles.input}
-          placeholder="*******"
-          secureTextEntry={true}
-          onChangeText={setPassword}
-          value={password}
-      />
-      <Button_login />
+        <Image source={require('D:/Semestre 9/Software 3/Gym_App/assets/img/logo_azul (1).png')} style={styles.logo}></Image>
+        <Text style={styles.title}> Sign In</Text>
+        <Text style={styles.labels}>   Username</Text>
+        <TextInput
+            style={styles.input}
+            placeholder="name@example.com"
+            onChangeText={setUsername}
+            value={username}
+        />
+        <Text style={styles.labels}>   Password</Text>
+        <TextInput
+            style={styles.input}
+            placeholder="*******"
+            secureTextEntry={true}
+            onChangeText={setPassword}
+            value={password}
+        />
+        <Button_login />
 
+        <CheckBox
+          title= "Remember me"
+          checked={rememberMe}
+          onPress={() => setRememberMe(!rememberMe)}
+          containerStyle={styles.checkboxContainer}
+          textStyle={styles.text}
+        />
+
+      <View style={styles.row}>
+        <TouchableOpacity onPress={onPress}>
+          <Text style={styles.text_pass}>Forgot Password?</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={onPress}>
+          <Text style={styles.text_sign}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
         
     </View>
   );
@@ -60,10 +78,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     //alignItems: 'left'
-    justifyContent: 'center',
-    alignItems: 'left',
-    justifyContent: 'center',
-    alignItems: 'left',
   },
   title: {
     fontSize: 40,
@@ -115,14 +129,6 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '100%',
-    height: '45%',
-    resizeMode: 'cover',
-    //marginBottom: 20,
-    width: '100%',
-    height: '45%',
-    resizeMode: 'cover',
-    //marginBottom: 20,
   }
 });
 
